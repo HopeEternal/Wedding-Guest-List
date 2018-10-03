@@ -38,6 +38,26 @@ h1, h2, h3, h4, h5, h6 {
     color: #6888a4;
 }
 
+#addGuestBtn {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background: #f3f3f5;
+    color: #333333;
+    border-radius: 20px;
+}
+
+#addGuestBtn:focus {
+    background: #6888a4;
+    color: #f3f3f5;
+}
+
+#addGuestBtn:focus i.fas {
+    color: #f3f3f5;
+}
+
+
 .totals {
     margin: 0 auto;
     padding: 5px 20px;
