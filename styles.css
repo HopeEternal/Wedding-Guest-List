@@ -38,6 +38,19 @@ h1, h2, h3, h4, h5, h6 {
     color: #6888a4;
 }
 
+.guestForm {
+    margin: 10px;
+    background: #6888a4;
+    display: none;
+}
+
+.guestForm input {
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    color: #333333;
+}
+
 #addGuestBtn {
     padding: 10px;
     margin-bottom: 10px;

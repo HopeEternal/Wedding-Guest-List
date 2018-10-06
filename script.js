@@ -13,7 +13,9 @@ var guestList = [];
 var avgAge = 0;
 var ageDisp = 0;
 var dietResList = [];
-var guests = document.querySelector(".guestCont");
+var guests = document.querySelector('.guestCont');
+var addGuestBtn = document.getElementById('addGuestBtn');
+var guestFields = document.querySelector('.guestForm');
 
 //Guest Constructor
 var Guest = function (name, age, diet) {
@@ -22,7 +24,7 @@ var Guest = function (name, age, diet) {
     this.diet = diet;
 }
 
-//Defaul Guest Additions
+//Default Guest Additions
 var mrChai = new Guest('Syn Nyan', 62, 'None');
 var mrsChai = new Guest('Sau Mooi Yap', 60, 'None');
 var chloe = new Guest('Chloe', 21, 'Vegetarian');
@@ -31,14 +33,16 @@ var michael = new Guest('Michael', 24, 'Only eats pizza');
 var ryan = new Guest('Ryan Toyz', 24, 'Vegetarian');
 var hannah = new Guest('Hannah', 25, 'Vegetarian');
 var dan = new Guest('Canadian Dan', 28, 'None');
-var jen = new Guest('Jen', 27, 'Dislikes Mushrooms');
+var jen = new Guest('Jen', 27, 'Dislikes Mushrooms and Fish');
 var cayden = new Guest('Cayden', 17, 'None');
 var papa = new Guest('Papa Spud', 17, 'None?');
 var adrian = new Guest('Adrian', 25, 'None');
 var aaron = new Guest('Aaron', 23, 'None');
 var cassie = new Guest('Cassie', 31, 'None');
+var mike = new Guest('Mike', 34, 'None');
+var dillon = new Guest('Dillon', 27, 'None');
 
-guestList.push(mrChai, mrsChai, chloe, weiSynn, michael, ryan, hannah, dan, jen, cayden, papa, adrian, aaron, cassie);
+guestList.push(mrChai, mrsChai, chloe, weiSynn, michael, ryan, hannah, dan, jen, cayden, papa, adrian, aaron, cassie, mike, dillon);
 
 
 //Insert HTML into the DOM
@@ -87,29 +91,47 @@ finalAge();
  
 
 //Event Listener for Guest Button Addition
+addGuestBtn.addEventListener('mouseover', showGuestFields);
+addGuestBtn.addEventListener('click', addGuest);
 
-document.getElementById('addGuestBtn').addEventListener('click', addGuest);
+function showGuestFields() {
+  guestFields.style.display = "block";
+}
 
 function addGuest() {
-  var guestAddName = prompt('Please enter the Name of the Guest.');
-  var guestAddAge = prompt('Please enter the Age of the Guest.');
-  var guestAddDiet = prompt('Please enter any Diet Restrictions for the Guest.');
+  var guestAddName = document.getElementById('inputName').value;
+  var guestAddAge = document.getElementById('inputAge').value;
+  var guestAddDiet = document.getElementById('inputDiet').value;
 
   var newGuest = new Guest(guestAddName, parseInt(guestAddAge), guestAddDiet);
   guestList.push(newGuest);
 
   var lastGuest = guestList.length;
 
+  avgAge = 0;
+
   guests.innerHTML = "";
   dietResList = [];
 
+
   guestListDisplay(lastGuest);
   displayTotes();
-  
+
+  //Clear Input fields and Hide them
+
+    function clearFields() {
+      guestFields.style.display = "none";
+      document.getElementById('inputName').value = "Name";
+      document.getElementById('inputAge').value = "Age";
+      document.getElementById('inputDiet').value ="Diet Restrictions";
+    }
+
+    clearFields();
+
 };
 
 
-//Init Function
+//Init Functions
 
 guestListDisplay();
 displayTotes();
