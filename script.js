@@ -25,6 +25,8 @@ var Guest = function (name, age, diet) {
 }
 
 //Default Guest Additions
+var wilson = new Guest('Wilson the Groom', 27, 'Ew Shrimp');
+var risa = new Guest('Risa the Bride', 30, 'AIP');
 var mrChai = new Guest('Syn Nyan', 62, 'None');
 var mrsChai = new Guest('Sau Mooi Yap', 60, 'None');
 var chloe = new Guest('Chloe', 21, 'Vegetarian');
@@ -34,15 +36,13 @@ var ryan = new Guest('Ryan Toyz', 24, 'Vegetarian');
 var hannah = new Guest('Hannah', 25, 'Vegetarian');
 var dan = new Guest('Canadian Dan', 28, 'None');
 var jen = new Guest('Jen', 27, 'Dislikes Mushrooms and Fish');
-var cayden = new Guest('Cayden', 17, 'None');
-var papa = new Guest('Papa Spud', 17, 'None?');
 var adrian = new Guest('Adrian', 25, 'None');
 var aaron = new Guest('Aaron', 23, 'None');
 var cassie = new Guest('Cassie', 31, 'None');
 var mike = new Guest('Mike', 34, 'None');
 var dillon = new Guest('Dillon', 27, 'None');
 
-guestList.push(mrChai, mrsChai, chloe, weiSynn, michael, ryan, hannah, dan, jen, cayden, papa, adrian, aaron, cassie, mike, dillon);
+guestList.push(wilson, risa, mrChai, mrsChai, chloe, weiSynn, michael, ryan, hannah, dan, jen, adrian, aaron, cassie, mike, dillon);
 
 
 //Insert HTML into the DOM
